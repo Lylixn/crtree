@@ -1,0 +1,13 @@
+name: crtree
+version: 0.1.0
+
+authors:
+  - l-guerra-rago <lylian.gr@protonmail.com>
+
+targets:
+  crtree:
+    main: src/crtree.cr
+
+crystal: '>= 1.10.1'
+
+license: MIT
