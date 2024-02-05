@@ -1,18 +1,24 @@
 # crtree
 
-TODO: Write a description here
+CrTree is a simple implementation of a tree data structure in Crystal.
 
 ## Installation
 
-TODO: Write installation instructions here
+1. Clone the repository
+2. Run `crystal build ./src/crtree.cr` to build the application
+3. Run `./crtree` to execute the application
+4. Enjoy!
 
 ## Usage
 
-TODO: Write usage instructions here
+```bash
+./crtree
+```
 
-## Development
-
-TODO: Write development instructions here
+Flags:
+- `--help -h`: Show help message
+- `--version -v`: Show version information
+- '--path=PATH -p': Set the path to the file to be read
 
 ## Contributing
 
