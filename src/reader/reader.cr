@@ -9,7 +9,6 @@ class Reader
     @directory = Dir.new(@path)
 
     puts "\033[0;34m.\033[0m"
-    @@directories += 1
     read(@path)
     puts "\n  \033[1;32m#{@@files} files\033[0m, \033[1;34m#{@@directories} directories\033[0m"
   end
@@ -36,9 +35,6 @@ class Reader
         @@files += 1
 
       else File.directory?("#{path}/#{element}")
-        if element == ".git" || element == "node_modules" || element == "." || element == ".." || element == ".idea"
-          next
-        end
 
         @@directories += 1
         puts prefix + decorator + "─ \033[0;34m" + element + "\033[0m"
