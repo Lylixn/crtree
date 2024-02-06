@@ -1,12 +1,13 @@
 require "option_parser"
 
-require "./reader/reader.cr"
+require "./reader.cr"
 
 module Crtree
   VERSION = "0.1.0"
   NAME = "CrTree"
 
   search_path = nil
+  ignored_files = false
 
   # Arguments parser
   OptionParser.parse do |parser|
@@ -31,6 +32,11 @@ module Crtree
       search_path = path
     end
 
+    parser.on "-a", "--all", "Show ignored files" do |path|
+      ignored_files = true
+    end
+
+
     parser.missing_option do |flag|
       STDERR.puts "ERROR: '#{flag} value' is required."
       STDERR.puts parser
@@ -48,5 +54,5 @@ module Crtree
     search_path = File.dirname(Process.executable_path.as(String))
   end
 
-  reader = Reader.new(search_path.as(String))
+  reader = Reader.new(search_path.as(String), ignored_files)
 end

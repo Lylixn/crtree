@@ -4,9 +4,10 @@ class Reader
   @@files : Int32 = 0
   @@directories : Int32 = 0
 
-  def initialize (path : String | Path)
+  def initialize (path : String | Path, ignore : Bool)
     @path = path
     @directory = Dir.new(@path)
+    @ignore = ignore
 
     puts "\033[0;34m.\033[0m"
     read(@path)
@@ -18,6 +19,12 @@ class Reader
     directory = Dir.new(path)
 
     directory.each_child do |element|
+
+      if !@ignore
+        if element.starts_with?(".")
+          next
+        end
+      end
 
       decorator = "├─"
       if element == Dir.new(path).children.last
