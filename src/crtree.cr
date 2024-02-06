@@ -32,7 +32,11 @@ module Crtree
       search_path = path
     end
 
-    parser.on "-a", "--all", "Show ignored files" do |path|
+    parser.on "-a", "--all", "Show ignored files" do
+      ignored_files = true
+    end
+
+    parser.on "--output==OUTPUT", "Show ignored files" do |output|
       ignored_files = true
     end
 

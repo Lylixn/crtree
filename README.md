@@ -19,6 +19,8 @@ Flags:
 - `--help -h`: Show help message
 - `--version -v`: Show version information
 - '--path=PATH -p': Set the path to the file to be read
+- '--all -a': Show all the nodes in the tree
+- '--output=OUTPUT': Set the output file
 
 ## Contributing
 
